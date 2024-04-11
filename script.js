@@ -25,4 +25,10 @@ window.onload= function() {
     //draw initial dianasour 
     context.fillStyle="green"
     context.fillRect(dino.x,dino.y,dino.width,dino.height);
+
+    dinoImg= new Image();
+    dinoImg.src="./img/dino.png ";
+    dinoImg.onload=fuction() {
+        context.drawImage(dinoImg,dino.x,dino.y,dino.width,dino.height);
+    }
 }

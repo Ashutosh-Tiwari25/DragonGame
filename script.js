@@ -26,13 +26,17 @@ window.onload = function () {
     context = board.getContext("2d");
 
     //draw initial dinosaur
-    context.fillStyle = "blue";
-    context.fillRect(dinoX, dinoY, dino.width, dino.height);
+    //context.fillStyle = "green";
+    //context.fillRect(dinoX, dinoY, dino.width, dino.height);
 
     dinoImg = new Image();
     dinoImg.src = "./img/dino.png";
     dinoImg.onload = function () {
         context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
+        dinoImg.onerror = function() {
+            console.error("Error loading dinosaur image");
+        };
+        
     }
 }
 

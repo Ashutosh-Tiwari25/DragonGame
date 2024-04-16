@@ -33,6 +33,6 @@ context.fillRect(dinoX,dinoY,dino.width, dino.height);
 dinoImg= new Image();
 dinoImg.src="./img/dino.png/";
 dinoImg.onload= function(){
-context.drawImg(dino.Img, dino.x, dino.y,dino.width,dino.height);
+context.drawImage(dino.Img, dino.x, dino.y,dino.width,dino.height);
 
 }

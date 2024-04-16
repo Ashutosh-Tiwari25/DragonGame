@@ -1,6 +1,6 @@
 //board
 let board;
-let boardWidth= 750 ;
+let boardWidth= 850;
 let boardHeight= 250;
 let context ;
 
@@ -34,5 +34,4 @@ dinoImg= new Image();
 dinoImg.src="./img/dino.png/";
 dinoImg.onload= function(){
 context.drawImage(dino.Img, dino.x, dino.y,dino.width,dino.height);
-
 }

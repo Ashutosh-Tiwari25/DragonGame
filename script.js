@@ -41,7 +41,7 @@ let cactusArray= [];
 let cactusHeight=78;
 let cactus1Width=34;
 let cactus2Width=70;
-let cactus3Width=102;
+let cactus3Width=100;
 
 cactusX= 700;
 cactusY= boardHeight-cactusHeight;

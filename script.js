@@ -1,34 +1,38 @@
-let boardWidth = 750; //here board is the id set in HTML 
-let boardHeight = 250;//know the difference between : and = in code
-let context;
+//board
+let board;
+let boardWidth= 750 ;
+let boardHeight= 250;
+let context ;
 
 //dino
-let dinoWidth = 88;
-let dinoHeight = 94;
-let dinoX = 50;
-let dinoY= boardHeight-dinoHeight;
-let dinoImg ;
+let dinoWidth= 99;
+let dinoheight= 88;
+let dinoX= 50;
+let dinoY= boardHeight-dinoHeight ;
+let dinoImg;
 
 let dino = {
-    x: dinoX,
-    y: dinoY,
-    width: dinoWidth,
-    height:dinoHeight
+    x : dinoX,
+    y : dinoY,
+    height: dinoHeight,
+    width: dinoWidth
+
 }
 
-window.onload= function() {
-    board=document.getElementById("board")
-    board.height=boardHeight;
-    board.width=boardWidth;
-    
-    context= board.getContext("2d");// used for drawing on the board
-    //draw initial dianasour 
-    context.fillStyle="green"
-    context.fillRect(dino.x,dino.y,dino.width,dino.height);
+window.onload = function (){
+    board= document.getElementById("board");
+    board.height= boardHeight;
+    board.width= boardWidth;
 
-    dinoImg= new Image();
-    dinoImg.src="./img/dino.png ";
-    dinoImg.onload=fuction() {
-        context.drawImage(dinoImg,dino.x,dino.y,dino.width,dino.height);
-    }
+    context = board.getContext("2d");
+}
+//draw initial dinosaur
+context.fillStyle="red";
+context.fillRect(dinoX,dinoY,dino.width, dino.height);
+
+dinoImg= new Image();
+dinoImg.src="./img/dino.png/";
+dinoImg.onload= function(){
+context.drawImg(dino.Img, dino.x, dino.y,dino.width,dino.height);
+
 }

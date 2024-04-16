@@ -40,7 +40,7 @@ context.drawImage(dino.Img, dino.x, dino.y,dino.width,dino.height);
 let cactusArray= [];
 let cactusHeight=78;
 let cactus1Width=44;
-let cactus2Width=70;
+let cactus2Width=80;
 let cactus3Width=100;
 
 cactusX= 700;

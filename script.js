@@ -35,3 +35,15 @@ dinoImg.src="./img/dino.png/";
 dinoImg.onload= function(){
 context.drawImage(dino.Img, dino.x, dino.y,dino.width,dino.height);
 }
+
+//Cactus
+let cactusArray= [];
+let cactusHeight=70;
+let cactus1Width=34;
+let cactus2Width=70;
+let cactus3Width=102;
+
+cactusX= 700;
+cactusY= boardHeight-cactusHeight;
+
+

@@ -27,7 +27,7 @@ window.onload = function (){
     context = board.getContext("2d");
 }
 //draw initial dinosaur
-context.fillStyle="green";
+context.fillStyle="brown";
 context.fillRect(dinoX,dinoY,dino.width, dino.height);
 
 dinoImg= new Image();

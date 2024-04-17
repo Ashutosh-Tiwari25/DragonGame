@@ -1,10 +1,10 @@
-//board
+// Board
 let board;
 let boardWidth = 850;
 let boardHeight = 250;
 let context;
 
-//dino
+// Dino
 let dinoWidth = 99;
 let dinoHeight = 88;
 let dinoX = 50;
@@ -25,7 +25,7 @@ window.onload = function () {
 
     context = board.getContext("2d");
 
-    //draw initial dinosaur
+    // Draw initial dinosaur
     context.fillStyle = "green";
     context.fillRect(dinoX, dinoY, dino.width, dino.height);
 
@@ -33,14 +33,13 @@ window.onload = function () {
     dinoImg.src = "./img/dino.png";
     dinoImg.onload = function () {
         context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
-        dinoImg.onerror = function() {
-            console.error("Error loading dinosaur image");
-        };
-        
-    }
+    };
+    dinoImg.onerror = function() {
+        console.error("Error loading dinosaur image");
+    };
 }
 
-//Cactus
+// Cactus
 let cactusArray = [];
 let cactusHeight = 78;
 let cactus1Width = 44;
@@ -50,5 +49,5 @@ let cactus3Width = 100;
 let cactusX = 700;
 let cactusY = boardHeight - cactusHeight;
 
-Cactus1Img= new Image();
-Cactus1Img.src= "./img/Cactus1.png"
+let cactus1Img = new Image();
+cactus1Img.src = "./img/cactus1.png";

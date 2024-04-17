@@ -26,8 +26,8 @@ window.onload = function () {
     context = board.getContext("2d");
 
     //draw initial dinosaur
-    //context.fillStyle = "green";
-    //context.fillRect(dinoX, dinoY, dino.width, dino.height);
+    context.fillStyle = "green";
+    context.fillRect(dinoX, dinoY, dino.width, dino.height);
 
     dinoImg = new Image();
     dinoImg.src = "./img/dino.png";
@@ -49,3 +49,6 @@ let cactus3Width = 100;
 
 let cactusX = 700;
 let cactusY = boardHeight - cactusHeight;
+
+Cactus1Img= new Image();
+Cactus1Img.src= "./img/Cactus1.png"

@@ -26,11 +26,11 @@ window.onload = function () {
     context = board.getContext("2d");
 
     // Draw initial dinosaur
-    context.fillStyle = "green";
-    context.fillRect(dinoX, dinoY, dino.width, dino.height);
+    //context.fillStyle = "green";
+    //context.fillRect(dinoX, dinoY, dino.width, dino.height);
 
     dinoImg = new Image();
-    dinoImg.src = "./img/dino.png";
+    dinoImg.src = "C:\Users\ashut\Downloads\img\dino.png/dino.png;"
     dinoImg.onload = function () {
         context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
     };
@@ -49,4 +49,4 @@ let cactusX = 700;
 let cactusY = boardHeight - cactusHeight;
 
 let cactus1Img = new Image();
-cactus1Img.src = "./img/cactus1.png";
+cactus1Img.src = "C:\Users\ashut\Downloads\img\cactus1.png";

@@ -27,6 +27,10 @@ let cactus3Width = 100;
 let cactusX = 700;
 let cactusY = boardHeight - cactusHeight;
 
+let cactus1Img;
+let cactus2Img;
+let cactus3Img;
+
 
 window.onload = function () {
     board = document.getElementById("board");

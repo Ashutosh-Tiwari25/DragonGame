@@ -34,16 +34,15 @@ window.onload = function () {
     dinoImg.onload = function () {
         context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
     };
-    dinoImg.onerror = function() {
-        console.error("Error loading dinosaur image");
-    };
+   
+    
 }
 
 // Cactus
 let cactusArray = [];
 let cactusHeight = 78;
 let cactus1Width = 44;
-let cactus2Width = 80;
+let cactus2Width = 70;
 let cactus3Width = 100;
 
 let cactusX = 700;

@@ -49,4 +49,4 @@ let cactusX = 700;
 let cactusY = boardHeight - cactusHeight;
 
 let cactus1Img = new Image();
-cactus1Img.src = "C:\Users\ashut\Downloads\img\cactus1.png";
+cactus1Img.src = "./img/cactus1.png";

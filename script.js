@@ -17,6 +17,16 @@ let dino = {
     height: dinoHeight,
     width: dinoWidth
 }
+// Cactus
+let cactusArray = [];
+let cactusHeight = 78;
+let cactus1Width = 44;
+let cactus2Width = 70;
+let cactus3Width = 100;
+
+let cactusX = 700;
+let cactusY = boardHeight - cactusHeight;
+
 
 window.onload = function () {
     board = document.getElementById("board");
@@ -35,6 +45,15 @@ window.onload = function () {
         context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
     };
    
+    let cactus1Img = new Image();
+    cactus1Img.src = "./img/cactus1.png";
+
+    let cactus2Img = new Image();
+    cactus2Img.src="./img/cactus2.png";
+
+    let cactus3Img = new Image();
+    cactus3Img.src ="./img/cactus3.png";
+
     requestAnimationFrame(update);
 }
 
@@ -42,15 +61,3 @@ function update(){
     requestAnimationFrame(update);
 
 }
-// Cactus
-let cactusArray = [];
-let cactusHeight = 78;
-let cactus1Width = 44;
-let cactus2Width = 70;
-let cactus3Width = 100;
-
-let cactusX = 700;
-let cactusY = boardHeight - cactusHeight;
-
-let cactus1Img = new Image();
-cactus1Img.src = "./img/cactus1.png";

@@ -38,7 +38,7 @@ window.onload = function () {
     board.width = boardWidth;
 
     context = board.getContext("2d");
-
+}
     // Draw initial dinosaur
     //context.fillStyle = "green";
     //context.fillRect(dinoX, dinoY, dino.width, dino.height);
@@ -49,6 +49,11 @@ window.onload = function () {
         //dino
         context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
         
+        //cactus
+        for (let i= 0; i <  cactusArray.length ; i++){
+            let cactus = cactusArray[i];
+            context.drawImage(cactus.img, cactus.x , cactus.y , cactus.width , cactus.height);
+
     };
    
     let cactus1Img = new Image();
@@ -94,7 +99,7 @@ function placeCactus(){
     }
     
     {
-    else if (letPlaceCactusChance> .50){//50 percent you get cactus 1 }
+     if (letPlaceCactusChance> .50){//50 percent you get cactus 1 }
     cactus.img = cactus1Img;
     cactus.width= cactus1Width;
     cactusArray.push(cactus);

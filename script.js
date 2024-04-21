@@ -76,6 +76,6 @@ function placeCactus(){
         width: null,
         height: cactusHeight
     }
-
+ letPlaceCactusChance= Math.random(); .//0-0.999
     }
 

@@ -55,7 +55,8 @@ window.onload = function () {
             context.drawImage(cactus.img, cactus.x , cactus.y , cactus.width , cactus.height);
 
     };
-   
+
+}
     let cactus1Img = new Image();
     cactus1Img.src = "./img/cactus1.png";
 
@@ -84,7 +85,7 @@ function placeCactus(){
         height: cactusHeight
     }
  letPlaceCactusChance= Math.random(); //0-0.999
-}
+
 
  if (letPlaceCactusChance > .90) {//10 percent you get Cactus 3
      cactus.img= cactus3Img;

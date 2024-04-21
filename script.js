@@ -59,9 +59,23 @@ window.onload = function () {
     cactus3Img.src ="./img/cactus3.png";
 
     requestAnimationFrame(update);
+    setInterval(placeCactus, 1000);
 }
 
 function update(){
     requestAnimationFrame(update);
 
 }
+
+function placeCactus(){
+    //place cactus
+    let cactus ={
+        img: null,
+        x: cactusX,
+        y: cactusY,
+        width: null,
+        height: cactusHeight
+    }
+
+    }
+

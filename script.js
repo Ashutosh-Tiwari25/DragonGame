@@ -89,5 +89,4 @@ function placeCactus(){
     cactus.img= cactus2Img;
     cactus.width= cactus2Width;
     cactusArray.push(cactus);
-    }
-
+}

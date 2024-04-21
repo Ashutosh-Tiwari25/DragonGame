@@ -46,7 +46,9 @@ window.onload = function () {
     dinoImg = new Image();
     dinoImg.src = "./img/dino.png";
     dinoImg.onload = function () {
+        //dino
         context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
+        
     };
    
     let cactus1Img = new Image();
@@ -79,7 +81,7 @@ function placeCactus(){
  letPlaceCactusChance= Math.random(); //0-0.999
 }
 
- if (letPlaceCactusChance > .90) {//you get Cactus 3
+ if (letPlaceCactusChance > .90) {//10 percent you get Cactus 3
      cactus.img= cactus3Img;
      cactus.width = cactus3Width;
      cactusArray.push(cactus);
@@ -89,8 +91,13 @@ function placeCactus(){
     cactus.img= cactus2Img;
     cactus.width= cactus2Width;
     cactusArray.push(cactus);
-
+    }
+    
     {
-        
+    else if (letPlaceCactusChance> .50){//50 percent you get cactus 1 }
+    cactus.img = cactus1Img;
+    cactus.width= cactus1Width;
+    cactusArray.push(cactus);
+
     }
 }

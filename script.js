@@ -68,6 +68,9 @@ window.onload = function () {
 function update(){
     requestAnimationFrame(update);
 
+     // dino
+        context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
+
     //cactus
     for (let i = 0; i < cactusArray.length; i++) {
         let cactus = cactusArray[i];
@@ -93,7 +96,7 @@ function placeCactus(){
      cactus.width = cactus3Width;
      cactusArray.push(cactus);
 }
-
+ 
     else if(letPlaceCactusChance>.70){// 30 percent you get cactus 2
     cactus.img= cactus2Img;
     cactus.width= cactus2Width;

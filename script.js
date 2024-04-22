@@ -73,20 +73,22 @@ window.onload = function () {
     setInterval(placeCactus, 1000);
 }
 
-function update(){
+function update() {
     requestAnimationFrame(update);
 
-     // dino
-        context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
+    // dino
+    context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
 
-    //cactus
+    // cactus
     for (let i = 0; i < cactusArray.length; i++) {
         let cactus = cactusArray[i];
         cactus.x += velocityX;
-        context.drawImage(cactus.img, cactus.x, cactus.y, cactus.width, cactus.height);
-     
+        if (cactus.img) { // Check if image is loaded
+            context.drawImage(cactus.img, cactus.x, cactus.y, cactus.width, cactus.height);
+        }
     }
 }
+
 function placeCactus(){
     //place cactus
     let cactus ={

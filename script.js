@@ -53,10 +53,11 @@ window.onload = function () {
         for (let i= 0; i <  cactusArray.length ; i++){
             let cactus = cactusArray[i];
             context.drawImage(cactus.img, cactus.x , cactus.y , cactus.width , cactus.height);
-
-    };
+        }
+    
 
 }
+
     let cactus1Img = new Image();
     cactus1Img.src = "./img/cactus1.png";
 
@@ -72,6 +73,8 @@ window.onload = function () {
 
 function update(){
     requestAnimationFrame(update);
+
+    context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
 
 }
 

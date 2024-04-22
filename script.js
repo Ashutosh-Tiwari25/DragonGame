@@ -48,8 +48,9 @@ window.onload = function () {
     dinoImg.onload = function () {
         //dino
         context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
-        
-}
+    }
+
+          
 
     let cactus1Img = new Image();
     cactus1Img.src = "./img/cactus1.png";
@@ -67,15 +68,14 @@ window.onload = function () {
 function update(){
     requestAnimationFrame(update);
 
-    context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
     //cactus
-    for (let i= 0; i <  cactusArray.length ; i++){
+    for (let i = 0; i < cactusArray.length; i++) {
         let cactus = cactusArray[i];
-        context.drawImage(cactus.img, cactus.x , cactus.y , cactus.width , cactus.height);
+        cactus.x += velocityX;
+        context.drawImage(cactus.img, cactus.x, cactus.y, cactus.width, cactus.height);
+     
     }
-
 }
-
 function placeCactus(){
     //place cactus
     let cactus ={

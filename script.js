@@ -19,11 +19,12 @@ let dino = {
 }
 // Cactus
 let cactusArray = [];
-let cactusHeight = 78;
-let cactus1Width = 44;
-let cactus2Width = 70;
-let cactus3Width = 100;
 
+let cactus1Width = 34;
+let cactus2Width = 69;
+let cactus3Width = 102;
+
+let cactusHeight = 70;
 let cactusX = 700;
 let cactusY = boardHeight - cactusHeight;
 
@@ -113,7 +114,7 @@ function placeCactus(){
     
     else if (letPlaceCactusChance> .50){//50 percent you get cactus 1 }
     cactus.img = cactus1Img;
-    cactus.width= cactus1Width;
+    cactus.width = cactus1Width;
     cactusArray.push(cactus);
 
     }

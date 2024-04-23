@@ -90,10 +90,6 @@ function update() {
    
 
 
-
-
-
-
     //place cactus
     let cactus = {
         img : null,

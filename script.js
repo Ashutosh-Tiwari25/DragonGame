@@ -60,13 +60,13 @@
 
             
 
-        let cactus1Img = new Image();
+        cactus1Img = new Image();
         cactus1Img.src = "./img/cactus1.png";
 
-        let cactus2Img = new Image();
+        cactus2Img = new Image();
         cactus2Img.src="./img/cactus2.png";
 
-        let cactus3Img = new Image();
+        cactus3Img = new Image();
         cactus3Img.src ="./img/cactus3.png";
 
         requestAnimationFrame(update);
@@ -97,7 +97,7 @@
             width: null,
             height: cactusHeight
         }
-    let PlaceCactusChance= Math.random(); //0-0.999
+    let PlaceCactusChance = Math.random(); //0-0.999
 
 
     if (PlaceCactusChance > .90) {//10 percent you get Cactus 3
@@ -106,7 +106,7 @@
         cactusArray.push(cactus);
     }
     
-        else if(PlaceCactusChance>.70){// 30 percent you get cactus 2
+        else if (PlaceCactusChance>.70){// 30 percent you get cactus 2
         cactus.img= cactus2Img;
         cactus.width= cactus2Width;
         cactusArray.push(cactus);

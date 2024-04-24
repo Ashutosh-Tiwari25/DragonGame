@@ -20,7 +20,7 @@
     // Cactus
     let cactusArray = [];
 
-    let cactus1Width = 34;
+    let cactus1Width = 44;
     let cactus2Width = 79;
     let cactus3Width = 102;
 

@@ -101,20 +101,20 @@
     letPlaceCactusChance= Math.random(); //0-0.999
 
 
-    if (letPlaceCactusChance > .90) {//10 percent you get Cactus 3
+    if (PlaceCactusChance > .90) {//10 percent you get Cactus 3
         cactus.img= cactus3Img;
         cactus.width = cactus3Width;
         cactusArray.push(cactus);
     }
     
-        else if(letPlaceCactusChance>.70){// 30 percent you get cactus 2
+        else if(PlaceCactusChance>.70){// 30 percent you get cactus 2
         cactus.img= cactus2Img;
         cactus.width= cactus2Width;
         cactusArray.push(cactus);
         }
         
         
-        else if (letPlaceCactusChance> .50){//50 percent you get cactus 1 }
+        else if (PlaceCactusChance> .50){//50 percent you get cactus 1 }
         cactus.img = cactus1Img;
         cactus.width = cactus1Width;
         cactusArray.push(cactus);

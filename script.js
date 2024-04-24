@@ -83,8 +83,12 @@ window.onload = function () {
 function update() {
     requestAnimationFrame(update);
 
+    context.clearRect(0, 0, boardWidth, boardHeight );
+
+
     // dino
     context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
+    
 
     // cactus
     for (let i = 0; i < cactusArray.length; i++) {
@@ -92,6 +96,7 @@ function update() {
         cactus.x += velocityX;
         if (cactus.img) { // Check if image is loaded
             context.drawImage(cactus.img, cactus.x, cactus.y, cactus.width, cactus.height);
+            
         }
     }
 

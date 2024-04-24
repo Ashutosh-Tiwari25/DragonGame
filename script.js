@@ -89,7 +89,6 @@
         }
     }
 
-    function placeCactus(){
         //place cactus
         let cactus ={
             img: null,
@@ -98,7 +97,7 @@
             width: null,
             height: cactusHeight
         }
-    letPlaceCactusChance= Math.random(); //0-0.999
+    let PlaceCactusChance= Math.random(); //0-0.999
 
 
     if (PlaceCactusChance > .90) {//10 percent you get Cactus 3
@@ -120,4 +119,4 @@
         cactusArray.push(cactus);
 
         }
-    }
+    

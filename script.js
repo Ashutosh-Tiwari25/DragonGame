@@ -129,6 +129,8 @@ function update() {
         cactusArray.push(cactus);
 
     }
+    if (cactusArray.length > 5);
+        cactusArray.shift();
 }
 
 

@@ -83,7 +83,7 @@ window.onload = function () {
 function update() {
     requestAnimationFrame(update);
 
-    context.clearRect( 0, 0, boardWidth, boardHeights );
+    context.clearRect( 0 , 0 , board.width, board.height );
 
 // dino
     context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);

@@ -93,11 +93,13 @@ function update() {
         let cactus = cactusArray[i];
         cactus.x += velocityX;
         if (cactus.img) { // Check if image is loaded
-            context.drawImage(cactus.img, cactus.x, cactus.y, cactus.width, cactus.height);
+            context.drawImage(cactus.img, cactus.x, cactus.y, cactus.width, cactus.height) ;
             
         }
 
         context.clearRect( 0, 0, boardWidth, boardHeights );
+
+        
 
     }
     let cactus = {

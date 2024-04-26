@@ -12,11 +12,11 @@ let dinoY = boardHeight - dinoHeight;
 let dinoImg;
 
 let dino = {
-    x: dinoX,
-    y: dinoY,
-    height: dinoHeight,
-    width: dinoWidth
-}
+  x: dinoX,
+  y: dinoY,
+  height: dinoHeight,
+  width: dinoWidth,
+};
 // Cactus
 let cactusArray = [];
 
@@ -35,7 +35,7 @@ let cactus3Img;
 //physics
 let velocityX = -8;
 let velocityY = 0;
-let gravity = .4;
+let gravity = 0.4;
 
 let gameOver = false;
 let score = 0;
@@ -44,107 +44,89 @@ let score = 0;
 
 // }
 
-
-
 window.onload = function () {
-    board = document.getElementById("board");
-    board.height = boardHeight;
-    board.width = boardWidth;
+  board = document.getElementById("board");
+  board.height = boardHeight;
+  board.width = boardWidth;
 
-    context = board.getContext("2d");
-    console.log("windows loding")
+  context = board.getContext("2d");
+  console.log("windows loding");
 
-    // Draw initial dinosaur
-    //context.fillStyle = "green";
-    //context.fillRect(dinoX, dinoY, dino.width, dino.height);
+  // Draw initial dinosaur
+  //context.fillStyle = "green";
+  //context.fillRect(dinoX, dinoY, dino.width, dino.height);
 
-    dinoImg = new Image();
-    dinoImg.src = "./img/dino.png";
-    dinoImg.onload = function () {
-        //dino
-        context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
-    }
+  dinoImg = new Image();
+  dinoImg.src = "./img/dino.png";
+  dinoImg.onload = function () {
+    //dino
+    context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
+  };
 
+  cactus1Img = new Image();
+  cactus1Img.src = "./img/cactus1.png";
 
+  cactus2Img = new Image();
+  cactus2Img.src = "./img/cactus2.png";
 
-    cactus1Img = new Image();
-    cactus1Img.src = "./img/cactus1.png";
+  cactus3Img = new Image();
+  cactus3Img.src = "./img/cactus3.png";
 
-    cactus2Img = new Image();
-    cactus2Img.src = "./img/cactus2.png";
-
-    cactus3Img = new Image();
-    cactus3Img.src = "./img/cactus3.png";
-
-    requestAnimationFrame(update);
-    setInterval(placeCactus, 1000);
-}
+  requestAnimationFrame(update);
+  setInterval(placeCactus, 1000);
+};
 
 function update() {
-    requestAnimationFrame(update);
-
-    context.clearRect( 0 , 0 , board.width, board.height );
-
-// dino
-    context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
-
-    // cactus
-    for (let i = 0; i < cactusArray.length; i++) {
-        let cactus = cactusArray[i];
-        cactus.x += velocityX;
-        if (cactus.img) { // Check if image is loaded
-            context.drawImage(cactus.img, cactus.x, cactus.y, cactus.width, cactus.height) ;
-            
-        }
-
-        context.clearRect( 0, 0, boardWidth, boardHeights );
-
-        
-
-    }
-    let cactus = {
-        img: null,
-        x: cactusX,
-        y: cactusY,
-        width: null,
-        height: cactusHeight
-    }
-    let PlaceCactusChance = Math.random(); //0-0.999
+  requestAnimationFrame(update);
+  context.clearRect(0, 0, board.width, board.height);
 
 
-    if (PlaceCactusChance > .90) {//10 percent you get Cactus 3
-        cactus.img = cactus3Img;
-        cactus.width = cactus3Width;
-        cactusArray.push(cactus);
+  // dino
+  context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
+
+  // cactus
+  for (let i = 0; i < cactusArray.length; i++) {
+    let cactus = cactusArray[i];
+    cactus.x += velocityX;
+    if (cactus.img) {
+      // Check if image is loaded
+      context.drawImage(
+        cactus.img,
+        cactus.x,
+        cactus.y,
+        cactus.width,
+        cactus.height
+      );
     }
 
-    else if (PlaceCactusChance > .70) {// 30 percent you get cactus 2
-        cactus.img = cactus2Img;
-        cactus.width = cactus2Width;
-        cactusArray.push(cactus);
-    }
+}
+  let cactus = {
+    img: null,
+    x: cactusX,
+    y: cactusY,
+    width: null,
+    height: cactusHeight,
+  };
+  let PlaceCactusChance = Math.random(); //0-0.999
 
-
-    else if (PlaceCactusChance > .50) {//50 percent you get cactus 1 }
-        cactus.img = cactus1Img;
-        cactus.width = cactus1Width;
-        cactusArray.push(cactus);
-
-    }
-    if (cactusArray.length > 5);
-        cactusArray.shift();
+  if (PlaceCactusChance > 0.9) {
+    //10 percent you get Cactus 3
+    cactus.img = cactus3Img;
+    cactus.width = cactus3Width;
+    cactusArray.push(cactus);
+  } else if (PlaceCactusChance > 0.7) {
+    // 30 percent you get cactus 2
+    cactus.img = cactus2Img;
+    cactus.width = cactus2Width;
+    cactusArray.push(cactus);
+  } else if (PlaceCactusChance > 0.5) {
+    //50 percent you get cactus 1 }
+    cactus.img = cactus1Img;
+    cactus.width = cactus1Width;
+    cactusArray.push(cactus);
+  }
+   if (cactusArray.length > .5){
+       cactusArray.shift(); // remove the first element from the array to the area
+   }
 }
 
-
-function moveDino(e){
-    if (gameOver) {
-    return;
-    }
-} 
-
-function placeCactus() {
-    if (gameOver) {
-        return;
-    }
-    
-}

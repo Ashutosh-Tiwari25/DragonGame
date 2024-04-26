@@ -136,5 +136,15 @@ function update() {
 }
 
 
+function moveDino(e){
+    if (gameOver) {
+    return;
+    }
+} 
 
-
+function placeCactus() {
+    if (gameOver) {
+        return;
+    }
+    
+}

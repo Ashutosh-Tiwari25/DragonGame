@@ -46,7 +46,6 @@ window.onload = function() {
     board = document.getElementById("board");
     board.height = boardHeight;
     board.width = boardWidth;
-    console.log("windows loding")
 
     context = board.getContext("2d"); //used for drawing on the board
 
@@ -71,14 +70,19 @@ window.onload = function() {
 
     requestAnimationFrame(update);
     setInterval(placeCactus, 1000); //1000 milliseconds = 1 second
-   
+    document.addEventListener("keydown", moveDino);
 }
 
 function update() {
     requestAnimationFrame(update);
-    
+    if (gameOver) {
+        return;
+    }
+    context.clearRect(0, 0, board.width, board.height);
+
     //dino
-    //apply gravity to current dino.y, making sure it doesn't exceed the ground
+    velocityY += gravity;
+    dino.y = Math.min(dino.y + velocityY, dinoY); //apply gravity to current dino.y, making sure it doesn't exceed the ground
     context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
 
     //cactus
@@ -86,10 +90,42 @@ function update() {
         let cactus = cactusArray[i];
         cactus.x += velocityX;
         context.drawImage(cactus.img, cactus.x, cactus.y, cactus.width, cactus.height);
+
+        if (detectCollision(dino, cactus)) {
+            gameOver = true;
+            dinoImg.src = "./img/dino-dead.png";
+            dinoImg.onload = function() {
+                context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
+            }
+        }
     }
 
-   
+    //score
+    context.fillStyle="black";
+    context.font="20px courier";
+    score++;
+    context.fillText(score, 5, 20);
+}
 
+function moveDino(e) {
+    if (gameOver) {
+        return;
+    }
+
+    if ((e.code == "Space" || e.code == "ArrowUp") && dino.y == dinoY) {
+        //jump
+        velocityY = -10;
+    }
+    else if (e.code == "ArrowDown" && dino.y == dinoY) {
+        //duck
+    }
+
+}
+
+function placeCactus() {
+    if (gameOver) {
+        return;
+    }
 
     //place cactus
     let cactus = {
@@ -118,4 +154,14 @@ function update() {
         cactusArray.push(cactus);
     }
 
+    if (cactusArray.length > 5) {
+        cactusArray.shift(); //remove the first element from the array so that the array doesn't constantly grow
+    }
+}
+
+function detectCollision(a, b) {
+    return a.x < b.x + b.width &&   //a's top left corner doesn't reach b's top right corner
+           a.x + a.width > b.x &&   //a's top right corner passes b's top left corner
+           a.y < b.y + b.height &&  //a's top left corner doesn't reach b's bottom left corner
+           a.y + a.height > b.y;    //a's bottom left corner passes b's top left corner
 }

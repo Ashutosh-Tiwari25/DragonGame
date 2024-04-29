@@ -78,8 +78,8 @@ window.onload = function () {
 
 function update() {
   requestAnimationFrame(update);
-  context.clearRect(0, 0, board.width, board.height);
 
+context.clearRect(0, 0, board.width, board.height);
 
   // dino
   context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
@@ -125,7 +125,7 @@ function update() {
     cactus.width = cactus1Width;
     cactusArray.push(cactus);
   }
-   if (cactusArray.length > .5){
+   if (cactusArray.length > 5){
        cactusArray.shift(); // remove the first element from the array to the area
    }
 }

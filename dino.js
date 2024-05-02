@@ -2,7 +2,7 @@
 //board
 let board;
 let boardWidth = 750;
-let boardHeight = 250;
+let boardHeight = 400;
 let context;
 
 //dino

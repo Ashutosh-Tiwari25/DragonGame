@@ -50,7 +50,6 @@ window.onload = function () {
   board.width = boardWidth;
 
   context = board.getContext("2d");
-  console.log("windows loding");
 
   // Draw initial dinosaur
   //context.fillStyle = "green";
@@ -74,6 +73,7 @@ window.onload = function () {
 
   requestAnimationFrame(update);
   setInterval(placeCactus, 1000);
+  document.addEventListener("space", moveDino)
 };
 
 function update() {
